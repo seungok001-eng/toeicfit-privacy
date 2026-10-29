@@ -1,8 +1,8 @@
-# 토익핏 (ToeicFit) — 개인정보 처리방침 · 소개 페이지
+# YUNLAB 홈페이지
 
-GitHub Pages 로 공개하는 페이지만 담은 저장소입니다.
+YUNLAB(윤랩) 회사 홈페이지와 앱 소개·개인정보 처리방침 (GitHub Pages).
 
-- 개인정보 처리방침 (7개 언어): https://seungok001-eng.github.io/toeicfit-privacy/privacy.html
-- 소개: https://seungok001-eng.github.io/toeicfit-privacy/
-
-`privacy.html` 은 앱 저장소의 `toeic/scripts/build_privacy.mjs` 로 만든 파일을 그대로 복사한 것입니다. 고칠 때는 앱 저장소에서 다시 만든 뒤 복사하세요.
+- 회사 홈: `index.html` · 공통 스타일 `site.css`
+- 토익핏 소개: `toeicfit/`
+- 토익핏 개인정보 처리방침: `privacy.html` — 앱 저장소의 `toeic/scripts/build_privacy.mjs` 로 만든 파일을 복사해 둔다
+- 주소: https://seungok001-eng.github.io/toeicfit-privacy/ (도메인 `yunlab.ai.kr` 연결 예정)

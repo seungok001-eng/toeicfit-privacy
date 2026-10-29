@@ -3,34 +3,68 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>토익핏</title>
-<meta name="description" content="목표 점수 맞춤 토익 단어·실전 문제·모의고사 앱" />
-<link rel="icon" href="icon.png" />
-<style>
-  :root { --bg: #f4f6fb; --fg: #121826; --muted: #4a5468; --brand: #2b59f0; --card: #fff; color-scheme: light; }
-  @media (prefers-color-scheme: dark) { :root { --bg: #0d1117; --fg: #edf1f7; --muted: #aab3c3; --brand: #6d8dff; --card: #161b22; color-scheme: dark; } }
-  body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.7 -apple-system, "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif; word-break: keep-all; }
-  main { max-width: 640px; margin: 0 auto; padding: 48px 20px 64px; text-align: center; }
-  img { width: 88px; height: 88px; border-radius: 22px; }
-  h1 { font-size: 28px; margin: 16px 0 6px; }
-  p { color: var(--muted); }
-  ul { text-align: left; background: var(--card); border-radius: 16px; padding: 18px 18px 18px 36px; color: var(--muted); }
-  a { color: var(--brand); }
-</style>
+<title>YUNLAB 윤랩</title>
+<meta name="description" content="YUNLAB(윤랩)은 시험 준비와 어학 공부를 돕는 학습 앱을 만드는 회사입니다. 대표 앱: 토익핏." />
+<meta property="og:title" content="YUNLAB 윤랩" />
+<meta property="og:description" content="공부 시간을 줄여 주는 학습 앱을 만듭니다." />
+<link rel="icon" href="toeicfit/icon.png" />
+<link rel="stylesheet" href="site.css" />
 </head>
 <body>
-<main>
-  <img src="icon.png" alt="" />
-  <h1>토익핏</h1>
-  <p>토익, 목표 점수만큼만 정확하게.<br />단어부터 Part 1~7 실전 문제, 모의고사와 예상 점수까지 앱 하나로.</p>
-  <ul>
-    <li>목표 점수 맞춤 토익 단어 3,600개 · 원어민 음성</li>
-    <li>잊을 때쯤 다시 나오는 간격 반복 복습</li>
-    <li>Part 1~7 실전 문제 · 정답 근거 해설</li>
-    <li>약 12분 실력 진단 · 하프·정규 모의고사 · 예상 점수</li>
-  </ul>
-  <p><a href="privacy.html">개인정보 처리방침</a></p>
-  <p style="font-size:13px">TOEIC is a registered trademark of ETS. 이 앱은 ETS와 관련이 없습니다.</p>
+<header class="top"><div class="wrap">
+  <a class="logo" href="./">YUN<span>LAB</span></a>
+  <nav><a href="#apps">앱</a><a href="#about">회사 소개</a><a href="#contact">문의</a></nav>
+</div></header>
+
+<main class="wrap">
+  <div class="hero">
+    <span class="eyebrow">YUNLAB · 윤랩</span>
+    <h1>공부 시간을 줄여 주는<br />학습 앱을 만듭니다.</h1>
+    <p>꼭 필요한 것만, 정확하게. YUNLAB은 시험 준비와 어학 공부를 돕는 모바일 학습 앱을 만드는 회사입니다.</p>
+    <p class="en" style="margin-top:14px">YUNLAB builds mobile learning apps that help people prepare for exams and study languages efficiently.</p>
+  </div>
+
+  <section id="apps">
+    <h2>앱</h2>
+    <div class="grid">
+      <div class="card app">
+        <img src="toeicfit/icon.png" alt="토익핏 아이콘" />
+        <div>
+          <h3>토익핏 <span class="badge">Android 출시 준비 중</span></h3>
+          <p>목표 점수 맞춤 토익 단어 3,600개와 Part 1~7 실전 문제, 모의고사·예상 점수까지 앱 하나로. 7개 언어 지원.</p>
+          <a class="btn" href="toeicfit/">자세히 보기</a><a class="btn ghost" href="privacy.html">개인정보 처리방침</a>
+        </div>
+      </div>
+      <div class="card soon"><p>새로운 학습 앱을 준비하고 있습니다.</p></div>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>회사 소개</h2>
+    <div class="grid">
+      <div class="card"><h3>정확한 콘텐츠</h3><p>실제 시험 형식을 기준으로 문제와 해설을 만들고, 하나하나 검수합니다.</p></div>
+      <div class="card"><h3>개인정보 최소 수집</h3><p>회원가입 없이 쓰고, 학습 기록은 사용자 기기에만 저장합니다. 광고가 없습니다.</p></div>
+      <div class="card"><h3>여러 언어 지원</h3><p>한국어·영어·일본어·베트남어·중국어(번체)·스페인어·프랑스어로 이용할 수 있습니다.</p></div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>문의</h2>
+    <div class="card">
+      <p>앱 이용, 결제·환불, 제휴 문의는 이메일로 보내 주세요. 영업일 기준 2일 안에 답변드립니다.</p>
+      <p style="margin-top:8px"><a href="mailto:support@yunlab.ai.kr">support@yunlab.ai.kr</a></p>
+    </div>
+  </section>
 </main>
+
+<footer><div class="wrap">
+  <b>YUNLAB (윤랩)</b><br />
+  대표자 윤강희 · 사업자등록번호 725-10-03366 · 통신판매업 신고번호 제2026-충남 천안-2290호<br />
+  주소 충청남도 천안시 동남구 풍세로 933, 1002동 1805호 (우편번호 31188)<br />
+  전화 010-2498-5741 · 이메일 <a href="mailto:support@yunlab.ai.kr">support@yunlab.ai.kr</a><br />
+  <span class="en">YUNLAB · Representative: YUN GANGHUI · 933 Pungse-ro, Dongnam-gu, Cheonan-si, Chungcheongnam-do 31188, Republic of Korea</span><br />
+  <span class="links"><a href="privacy.html">개인정보 처리방침</a><a href="https://www.ftc.go.kr/bizCommPop.do?wrkr_no=7251003366" target="_blank" rel="noopener">사업자 정보 확인</a></span><br />
+  © 2026 YUNLAB. All rights reserved.
+</div></footer>
 </body>
 </html>
