@@ -16,7 +16,7 @@
 <body>
 <header class="top"><div class="wrap">
   <a class="brand" href="./"><span class="mark">Y</span><span><b>YUNLAB</b><small>윤랩 · 교육 콘텐츠</small></span></a>
-  <nav><a href="#apps">앱</a><a href="#books">교재</a><a href="#materials">수업자료</a><a class="hide-s" href="#about">회사 소개</a><a href="#contact">문의</a></nav>
+  <nav><a href="#apps">앱</a><a href="#books">교재</a><a href="#about">회사 소개</a><a href="#contact">문의</a></nav>
 </div></header>
 
 <div class="hero"><div class="wrap">
@@ -30,7 +30,7 @@
   <div class="pillars">
     <a class="pillar" href="#apps"><span class="num">01</span><h3>학습 앱</h3><p>언제 어디서나, 목표에 맞춘 학습과 복습.</p><span class="go">앱 보기 →</span></a>
     <a class="pillar" href="#books"><span class="num">02</span><h3>교재</h3><p>시험 형식을 그대로 담은 체계적인 교재.</p><span class="go">교재 보기 →</span></a>
-    <a class="pillar" href="#materials"><span class="num">03</span><h3>수업자료</h3><p>선생님이 바로 쓰는 가이드와 활동지.</p><span class="go">수업자료 보기 →</span></a>
+    <a class="pillar" href="#books"><span class="num">03</span><h3>수업자료</h3><p>교재마다 선생님이 바로 쓰는 가이드와 활동지를 함께.</p><span class="go">교재에서 보기 →</span></a>
   </div>
 
   <section class="block" id="apps">
@@ -39,13 +39,8 @@
   </section>
 
   <section class="block" id="books">
-    <div class="sec-head"><div><span class="kicker">Books</span><h2>교재</h2></div><p>실제 시험 형식을 기준으로 구성하고, 문제와 해설을 하나하나 검수합니다.</p></div>
+    <div class="sec-head"><div><span class="kicker">Books &amp; Materials</span><h2>교재 · 수업자료</h2></div><p>실제 시험 형식을 기준으로 구성하고 하나하나 검수합니다. 교재마다 <b>수업자료</b> 버튼에서 선생님용 자료를 볼 수 있습니다.</p></div>
     <div class="grid" data-list="books"></div>
-  </section>
-
-  <section class="block" id="materials">
-    <div class="sec-head"><div><span class="kicker">For Teachers</span><h2>수업자료</h2></div><p>학원·학교 수업에 바로 쓸 수 있도록 교사용 가이드와 학생용 활동지를 함께 만듭니다.</p></div>
-    <div class="grid" data-list="materials"></div>
   </section>
 
   <section class="block" id="about">
@@ -75,22 +70,6 @@
 
 <noscript><p class="wrap">목록을 보려면 자바스크립트를 켜 주세요. <a href="toeicfit/">토익핏 소개</a></p></noscript>
 <script src="catalog.js"></script>
-<script>
-  (function () {
-    var esc = function (s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); };
-    var C = window.YUNLAB_CATALOG || {};
-    document.querySelectorAll("[data-list]").forEach(function (box) {
-      box.innerHTML = (C[box.dataset.list] || []).map(function (x) {
-        var pic = x.icon ? '<img class="thumb" src="' + esc(x.icon) + '" alt="" width="72" height="72" />'
-          : x.cover ? '<div class="cover">' + esc(x.cover) + "</div>" : "";
-        var st = x.status ? '<span class="status' + (x.status === "on" ? " on" : "") + '">' + esc(x.statusText || (x.status === "on" ? "출시" : "준비 중")) + "</span>" : "";
-        var links = (x.links || []).map(function (l, i) { return '<a class="btn' + (i ? " line" : "") + '" href="' + esc(l.href) + '">' + esc(l.label) + "</a>"; }).join("");
-        return '<article class="item' + (x.placeholder ? " soon" : "") + '">' + pic + "<div><h3>" + esc(x.title) + st + "</h3>"
-          + (x.sub ? '<div class="sub">' + esc(x.sub) + "</div>" : "") + "<p>" + esc(x.desc) + "</p>"
-          + (links ? '<div class="links">' + links + "</div>" : "") + "</div></article>";
-      }).join("");
-    });
-  })();
-</script>
+<script src="render.js"></script>
 </body>
 </html>
