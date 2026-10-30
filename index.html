@@ -3,68 +3,94 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>YUNLAB 윤랩</title>
-<meta name="description" content="YUNLAB(윤랩)은 시험 준비와 어학 공부를 돕는 학습 앱을 만드는 회사입니다. 대표 앱: 토익핏." />
+<title>YUNLAB 윤랩 · 교육 콘텐츠</title>
+<meta name="description" content="YUNLAB(윤랩)은 학습 앱, 교재, 수업자료를 만드는 교육 콘텐츠 회사입니다." />
 <meta property="og:title" content="YUNLAB 윤랩" />
-<meta property="og:description" content="공부 시간을 줄여 주는 학습 앱을 만듭니다." />
+<meta property="og:description" content="배움의 시간을 아끼는 교육 콘텐츠 — 학습 앱 · 교재 · 수업자료" />
 <link rel="icon" href="toeicfit/icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@600;700&display=swap" />
 <link rel="stylesheet" href="site.css" />
 </head>
 <body>
 <header class="top"><div class="wrap">
-  <a class="logo" href="./">YUN<span>LAB</span></a>
-  <nav><a href="#apps">앱</a><a href="#about">회사 소개</a><a href="#contact">문의</a></nav>
+  <a class="brand" href="./"><span class="mark">Y</span><span><b>YUNLAB</b><small>윤랩 · 교육 콘텐츠</small></span></a>
+  <nav><a href="#apps">앱</a><a href="#books">교재</a><a href="#materials">수업자료</a><a class="hide-s" href="#about">회사 소개</a><a href="#contact">문의</a></nav>
 </div></header>
 
+<div class="hero"><div class="wrap">
+  <span class="eyebrow">YUNLAB Education</span>
+  <h1>배움의 시간을 아끼는<br /><em>정확한</em> 교육 콘텐츠</h1>
+  <p class="lead">YUNLAB은 학습 앱, 교재, 수업자료를 만듭니다. 시험에 꼭 나오는 것을, 검수한 내용으로, 공부하는 사람과 가르치는 사람 모두에게.</p>
+  <p class="en">YUNLAB creates learning apps, textbooks and classroom materials for exam preparation and language study.</p>
+</div></div>
+
 <main class="wrap">
-  <div class="hero">
-    <span class="eyebrow">YUNLAB · 윤랩</span>
-    <h1>공부 시간을 줄여 주는<br />학습 앱을 만듭니다.</h1>
-    <p>꼭 필요한 것만, 정확하게. YUNLAB은 시험 준비와 어학 공부를 돕는 모바일 학습 앱을 만드는 회사입니다.</p>
-    <p class="en" style="margin-top:14px">YUNLAB builds mobile learning apps that help people prepare for exams and study languages efficiently.</p>
+  <div class="pillars">
+    <a class="pillar" href="#apps"><span class="num">01</span><h3>학습 앱</h3><p>언제 어디서나, 목표에 맞춘 학습과 복습.</p><span class="go">앱 보기 →</span></a>
+    <a class="pillar" href="#books"><span class="num">02</span><h3>교재</h3><p>시험 형식을 그대로 담은 체계적인 교재.</p><span class="go">교재 보기 →</span></a>
+    <a class="pillar" href="#materials"><span class="num">03</span><h3>수업자료</h3><p>선생님이 바로 쓰는 가이드와 활동지.</p><span class="go">수업자료 보기 →</span></a>
   </div>
 
-  <section id="apps">
-    <h2>앱</h2>
-    <div class="grid">
-      <div class="card app">
-        <img src="toeicfit/icon.png" alt="토익핏 아이콘" />
-        <div>
-          <h3>토익핏 <span class="badge">Android 출시 준비 중</span></h3>
-          <p>목표 점수 맞춤 토익 단어 3,600개와 Part 1~7 실전 문제, 모의고사·예상 점수까지 앱 하나로. 7개 언어 지원.</p>
-          <a class="btn" href="toeicfit/">자세히 보기</a><a class="btn ghost" href="privacy.html">개인정보 처리방침</a>
-        </div>
-      </div>
-      <div class="card soon"><p>새로운 학습 앱을 준비하고 있습니다.</p></div>
+  <section class="block" id="apps">
+    <div class="sec-head"><div><span class="kicker">Apps</span><h2>학습 앱</h2></div><p>회원가입 없이 바로 쓰고, 학습 기록은 기기에만 저장합니다. 광고가 없습니다.</p></div>
+    <div class="grid" data-list="apps"></div>
+  </section>
+
+  <section class="block" id="books">
+    <div class="sec-head"><div><span class="kicker">Books</span><h2>교재</h2></div><p>실제 시험 형식을 기준으로 구성하고, 문제와 해설을 하나하나 검수합니다.</p></div>
+    <div class="grid" data-list="books"></div>
+  </section>
+
+  <section class="block" id="materials">
+    <div class="sec-head"><div><span class="kicker">For Teachers</span><h2>수업자료</h2></div><p>학원·학교 수업에 바로 쓸 수 있도록 교사용 가이드와 학생용 활동지를 함께 만듭니다.</p></div>
+    <div class="grid" data-list="materials"></div>
+  </section>
+
+  <section class="block" id="about">
+    <div class="sec-head"><div><span class="kicker">About</span><h2>YUNLAB이 지키는 것</h2></div><p>좋은 교육 콘텐츠는 정확하고, 쉽게 쓰이고, 학습자를 존중해야 한다고 믿습니다.</p></div>
+    <div class="values">
+      <div class="value"><b>01</b><h3>정확성</h3><p>시험 형식과 출제 경향을 기준으로 만들고, 모든 문제와 해설을 검수합니다.</p></div>
+      <div class="value"><b>02</b><h3>효율</h3><p>목표에 꼭 필요한 것부터. 잊을 때쯤 다시 보는 복습으로 시간을 아낍니다.</p></div>
+      <div class="value"><b>03</b><h3>개인정보 보호</h3><p>필요한 것만 다룹니다. 앱은 회원가입이 없고 학습 기록은 기기에만 남습니다.</p></div>
+      <div class="value"><b>04</b><h3>누구나</h3><p>7개 언어로 이용할 수 있도록 만들고, 읽기 쉬운 화면을 지향합니다.</p></div>
     </div>
   </section>
 
-  <section id="about">
-    <h2>회사 소개</h2>
-    <div class="grid">
-      <div class="card"><h3>정확한 콘텐츠</h3><p>실제 시험 형식을 기준으로 문제와 해설을 만들고, 하나하나 검수합니다.</p></div>
-      <div class="card"><h3>개인정보 최소 수집</h3><p>회원가입 없이 쓰고, 학습 기록은 사용자 기기에만 저장합니다. 광고가 없습니다.</p></div>
-      <div class="card"><h3>여러 언어 지원</h3><p>한국어·영어·일본어·베트남어·중국어(번체)·스페인어·프랑스어로 이용할 수 있습니다.</p></div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <h2>문의</h2>
-    <div class="card">
-      <p>앱 이용, 결제·환불, 제휴 문의는 이메일로 보내 주세요. 영업일 기준 2일 안에 답변드립니다.</p>
-      <p style="margin-top:8px"><a href="mailto:support@yunlab.ai.kr">support@yunlab.ai.kr</a></p>
-    </div>
-  </section>
+  <div class="contact" id="contact">
+    <div><h2>문의</h2><p>앱 이용, 결제·환불, 교재·수업자료 구매, 제휴 문의를 받습니다. 영업일 기준 2일 안에 답변드립니다.</p></div>
+    <a class="btn" href="mailto:support@yunlab.ai.kr">support@yunlab.ai.kr</a>
+  </div>
 </main>
 
 <footer><div class="wrap">
-  <b>YUNLAB (윤랩)</b><br />
+  <div class="biz"><b>YUNLAB (윤랩)</b><br />
   대표자 윤강희 · 사업자등록번호 725-10-03366 · 통신판매업 신고번호 제2026-충남 천안-2290호<br />
-  주소 충청남도 천안시 동남구 풍세로 933, 1002동 1805호 (우편번호 31188)<br />
-  전화 010-2498-5741 · 이메일 <a href="mailto:support@yunlab.ai.kr">support@yunlab.ai.kr</a><br />
-  <span class="en">YUNLAB · Representative: YUN GANGHUI · 933 Pungse-ro, Dongnam-gu, Cheonan-si, Chungcheongnam-do 31188, Republic of Korea</span><br />
-  <span class="links"><a href="privacy.html">개인정보 처리방침</a><a href="https://www.ftc.go.kr/bizCommPop.do?wrkr_no=7251003366" target="_blank" rel="noopener">사업자 정보 확인</a></span><br />
-  © 2026 YUNLAB. All rights reserved.
+  주소 충청남도 천안시 동남구 풍세로 933, 1002동 1805호 (31188) · 전화 010-2498-5741 · 이메일 support@yunlab.ai.kr<br />
+  YUNLAB · Representative: YUN GANGHUI · 933 Pungse-ro, Dongnam-gu, Cheonan-si, Chungcheongnam-do 31188, Republic of Korea</div>
+  <div class="links"><a href="privacy.html">토익핏 개인정보 처리방침</a><a href="https://www.ftc.go.kr/bizCommPop.do?wrkr_no=7251003366" target="_blank" rel="noopener">사업자 정보 확인</a></div>
+  <div class="copy">© 2026 YUNLAB. All rights reserved.</div>
 </div></footer>
+
+<noscript><p class="wrap">목록을 보려면 자바스크립트를 켜 주세요. <a href="toeicfit/">토익핏 소개</a></p></noscript>
+<script src="catalog.js"></script>
+<script>
+  (function () {
+    var esc = function (s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); };
+    var C = window.YUNLAB_CATALOG || {};
+    document.querySelectorAll("[data-list]").forEach(function (box) {
+      box.innerHTML = (C[box.dataset.list] || []).map(function (x) {
+        var pic = x.icon ? '<img class="thumb" src="' + esc(x.icon) + '" alt="" width="72" height="72" />'
+          : x.cover ? '<div class="cover">' + esc(x.cover) + "</div>" : "";
+        var st = x.status ? '<span class="status' + (x.status === "on" ? " on" : "") + '">' + esc(x.statusText || (x.status === "on" ? "출시" : "준비 중")) + "</span>" : "";
+        var links = (x.links || []).map(function (l, i) { return '<a class="btn' + (i ? " line" : "") + '" href="' + esc(l.href) + '">' + esc(l.label) + "</a>"; }).join("");
+        return '<article class="item' + (x.placeholder ? " soon" : "") + '">' + pic + "<div><h3>" + esc(x.title) + st + "</h3>"
+          + (x.sub ? '<div class="sub">' + esc(x.sub) + "</div>" : "") + "<p>" + esc(x.desc) + "</p>"
+          + (links ? '<div class="links">' + links + "</div>" : "") + "</div></article>";
+      }).join("");
+    });
+  })();
+</script>
 </body>
 </html>
