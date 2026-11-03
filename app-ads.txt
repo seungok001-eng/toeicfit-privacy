@@ -1,0 +1,2 @@
+# 윤랩(YUNLAB) AdMob 게시자 — https://yunlab.ai.kr/app-ads.txt (홈페이지 맨 위). 윤랩 앱 전체가 함께 쓴다
+google.com, pub-6525076403986139, DIRECT, f08c47fec0942fa0
