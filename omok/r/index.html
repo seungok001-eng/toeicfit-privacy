@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>오목 천재 · 대국 신청</title>
+<meta name="description" content="친구가 오목 한 판을 신청했어요! 누르면 바로 대국방으로. Your friend wants to play Omok Genius.">
+<!-- 문자·카카오톡 미리보기 (미리보기 로봇은 스크립트를 돌리지 않는다 — 여러 언어를 한 줄에).
+     og:image 는 전체 주소여야 하는 앱이 있다 — 사이트 주소를 바꾸면 여기도 바꾼다 -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="오목 천재 · Omok Genius — 친구가 대국을 신청했어요!">
+<meta property="og:description" content="누르면 바로 한 판 · Tap to play · タップで対局 · Chạm để chơi · 點一下開局">
+<meta property="og:image" content="https://yunlab.ai.kr/omok/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#F6EFE3">
+<meta name="robots" content="noindex">
+<link rel="icon" href="/omok/favicon.png">
+<link rel="apple-touch-icon" href="/omok/img/apple-touch-icon.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="/omok/style.css">
+<style>
+.invite{max-width:440px;margin:0 auto}
+.invite .btn{width:100%;margin:6px 0}
+.invite .code{user-select:all;-webkit-user-select:all}
+.stores{display:flex;gap:10px}
+.stores .btn{flex:1}
+.step{font-size:14px;text-align:left;background:var(--paper);border-radius:16px;padding:12px 16px;margin-top:14px}
+.step ol{margin:0;padding-left:20px}
+.toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%);background:var(--ink);color:var(--cream);padding:10px 18px;border-radius:999px;font-size:14px;font-weight:700;opacity:0;transition:opacity .2s;pointer-events:none}
+.toast.on{opacity:1}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><a href="/omok/"><img src="/omok/img/logo.png" alt="오목 천재 · Omok Genius"></a></header>
+<section class="hero invite">
+<img class="m" src="/omok/img/mascot-cheer.webp" alt="" style="width:150px;height:150px">
+<h1 data-t="title">오목 한 판 두자!</h1>
+<p class="muted" data-t="lead">친구가 오목 천재에서 대국을 신청했어요.</p>
+<div class="code" id="code">------</div>
+<p class="muted" style="font-size:14px;margin-top:-4px" data-t="codeLabel">초대 코드</p>
+
+<a class="btn" id="open" href="#" data-t="open">앱에서 열기</a>
+
+<div id="android" hidden>
+  <a class="btn ghost" id="play" href="#" data-t="getPlay">Google Play 에서 받기</a>
+  <p class="muted" style="font-size:14px" data-t="androidNote">설치하고 처음 켜면 친구 방이 바로 열려요.</p>
+</div>
+
+<div id="ios" hidden>
+  <a class="btn ghost" id="appstore" href="#" data-t="getApp">코드 복사하고 App Store 가기</a>
+  <div class="step"><ol>
+    <li data-t="ios1">앱을 설치해요.</li>
+    <li data-t="ios2">이 링크를 한 번 더 누르거나, 앱 첫 화면의 "친구에게 초대받았어요"에 코드를 붙여 넣어요.</li>
+  </ol></div>
+</div>
+
+<div id="desktop" hidden>
+  <p class="muted" data-t="desktop">휴대폰에서 이 링크를 열어 주세요.</p>
+  <div class="stores">
+    <a class="btn ghost" id="play2" href="#">Google Play</a>
+    <a class="btn ghost" id="appstore2" href="#">App Store</a>
+  </div>
+</div>
+
+<p id="bad" class="muted" hidden data-t="bad">초대 코드가 올바르지 않아요. 친구에게 링크를 다시 받아 주세요.</p>
+</section>
+<div class="toast" id="toast"></div>
+<footer><a href="/omok/privacy.html" data-t="privacy">개인정보</a> · <a href="/omok/terms.html" data-t="terms">약관</a><br>© 2026 오목 천재 · Omok Genius</footer>
+</div>
+<script>
+(function () {
+  // ── 바꿀 값 ──────────────────────────────────────────
+  var PKG = "com.omokgenius.app";
+  // 앱스토어에 등록되면 주소를 넣는다 (예: https://apps.apple.com/app/id1234567890). 비어 있으면 앱스토어 검색
+  var APP_STORE_URL = "";
+
+  // ── 언어 (기기 언어: 한국어·日本語·Tiếng Việt·繁體中文, 그 밖에는 영어) ──
+  var T = {
+    ko: { title: "오목 한 판 두자!", lead: "친구가 오목 천재에서 대국을 신청했어요.", codeLabel: "초대 코드", open: "앱에서 열기", getPlay: "Google Play 에서 받기",
+      androidNote: "설치하고 처음 켜면 친구 방이 바로 열려요.", getApp: "코드 복사하고 App Store 가기", ios1: "앱을 설치해요.",
+      ios2: "이 링크를 한 번 더 누르거나, 앱 첫 화면의 \"친구에게 초대받았어요\"에 코드를 붙여 넣어요.", desktop: "휴대폰에서 이 링크를 열어 주세요.",
+      bad: "초대 코드가 올바르지 않아요. 친구에게 링크를 다시 받아 주세요.", copied: "코드를 복사했어요", privacy: "개인정보", terms: "약관", doc: "오목 천재 · 대국 신청" },
+    en: { title: "Let's play a game!", lead: "Your friend challenged you to a game of Omok Genius.", codeLabel: "Invite code", open: "Open in the app", getPlay: "Get it on Google Play",
+      androidNote: "Install it and open it — your friend's room opens right away.", getApp: "Copy code & go to the App Store", ios1: "Install the app.",
+      ios2: "Tap this link again, or paste the code under \"A friend invited me\" on the app's first screen.", desktop: "Open this link on your phone.",
+      bad: "This invite code doesn't look right. Ask your friend to send the link again.", copied: "Code copied", privacy: "Privacy", terms: "Terms", doc: "Omok Genius · Game invite" },
+    ja: { title: "一局打とう！", lead: "友だちがOmok Genius（五目並べ）で対局を申し込みました。", codeLabel: "招待コード", open: "アプリで開く", getPlay: "Google Play で入手",
+      androidNote: "インストールして初めて開くと、友だちのルームがすぐ開きます。", getApp: "コードをコピーして App Store へ", ios1: "アプリをインストールします。",
+      ios2: "このリンクをもう一度タップするか、アプリ最初の画面の「友だちに招待された」にコードを貼り付けます。", desktop: "スマートフォンでこのリンクを開いてください。",
+      bad: "招待コードが正しくありません。友だちにもう一度リンクを送ってもらってください。", copied: "コードをコピーしました", privacy: "プライバシー", terms: "利用規約", doc: "Omok Genius · 対局の招待" },
+    vi: { title: "Làm một ván caro nhé!", lead: "Bạn của bạn muốn chơi một ván Omok Genius.", codeLabel: "Mã mời", open: "Mở trong ứng dụng", getPlay: "Tải trên Google Play",
+      androidNote: "Cài đặt và mở lần đầu — phòng của bạn bè sẽ mở ngay.", getApp: "Sao chép mã & đến App Store", ios1: "Cài ứng dụng.",
+      ios2: "Bấm lại link này, hoặc dán mã vào mục \"Mình được bạn mời\" ở màn hình đầu tiên của ứng dụng.", desktop: "Hãy mở link này trên điện thoại.",
+      bad: "Mã mời không đúng. Hãy nhờ bạn gửi lại link.", copied: "Đã sao chép mã", privacy: "Quyền riêng tư", terms: "Điều khoản", doc: "Omok Genius · Lời mời chơi" },
+    zh: { title: "來下一盤吧！", lead: "朋友邀請你在 Omok Genius 下一盤五子棋。", codeLabel: "邀請碼", open: "在 App 中開啟", getPlay: "在 Google Play 下載",
+      androidNote: "安裝後第一次開啟，就會直接進入朋友的房間。", getApp: "複製代碼並前往 App Store", ios1: "安裝 App。",
+      ios2: "再點一次這個連結，或在 App 第一個畫面的「我收到朋友的邀請」貼上代碼。", desktop: "請用手機開啟這個連結。",
+      bad: "邀請碼不正確，請朋友再傳一次連結。", copied: "已複製代碼", privacy: "隱私權", terms: "條款", doc: "Omok Genius · 對局邀請" }
+  };
+  var nav = (navigator.languages && navigator.languages[0]) || navigator.language || "en";
+  var lang = /^ko/i.test(nav) ? "ko" : /^ja/i.test(nav) ? "ja" : /^vi/i.test(nav) ? "vi" : /^zh/i.test(nav) ? "zh" : "en";
+  var L = T[lang];
+  document.documentElement.lang = lang === "zh" ? "zh-Hant" : lang;
+  document.title = L.doc;
+  [].forEach.call(document.querySelectorAll("[data-t]"), function (el) { var k = el.getAttribute("data-t"); if (L[k]) el.textContent = L[k]; });
+
+  var $ = function (id) { return document.getElementById(id); };
+  var toast = function (s) { var t = $("toast"); t.textContent = s; t.className = "toast on"; setTimeout(function () { t.className = "toast"; }, 1800); };
+
+  // ── 초대 코드: /omok/r/?c=ABC234 (앱이 만드는 링크) · ?code=ABC234 · /r/ABC234 ──
+  var m = location.search.match(/[?&](?:c|code)=([A-Za-z0-9-]{4,12})/) || location.pathname.match(/\/(?:r|room)\/([A-Za-z0-9-]{4,12})/);
+  var code = m ? m[1].replace(/[^A-Za-z0-9]/g, "").toUpperCase() : "";
+  if (!/^[ABCDEFGHJKMNPQRSTUVWXYZ23456789]{6}$/.test(code)) {
+    $("code").hidden = true; $("open").hidden = true; $("bad").hidden = false;
+    document.querySelector("[data-t=codeLabel]").hidden = true;
+    return;
+  }
+  $("code").textContent = code;
+
+  // 플레이 스토어 링크에 초대 코드를 실어 보낸다 → 설치 후 처음 켤 때 앱이 받아서 친구 방을 연다 (Install Referrer)
+  var play = "https://play.google.com/store/apps/details?id=" + PKG + "&referrer=" + encodeURIComponent("omok_room=" + code + "&utm_source=invite");
+  var appStore = APP_STORE_URL || "https://apps.apple.com/search?term=" + encodeURIComponent("Omok Genius");
+  var scheme = "omok://room/" + code;
+
+  var ua = navigator.userAgent;
+  var android = /Android/i.test(ua);
+  var ios = /iPhone|iPad|iPod/i.test(ua) || (/Macintosh/i.test(ua) && navigator.maxTouchPoints > 1);
+
+  var copy = function () {
+    try { if (navigator.clipboard) return navigator.clipboard.writeText(code).then(function () { toast(L.copied); }, function () {}); } catch (e) {}
+  };
+  $("code").onclick = copy;
+
+  if (android) {
+    // 앱이 있으면 앱이, 없으면 (초대 코드를 실은) 플레이 스토어가 열린다
+    var intent = "intent://room/" + code + "#Intent;scheme=omok;package=" + PKG + ";S.browser_fallback_url=" + encodeURIComponent(play) + ";end";
+    $("open").href = intent;
+    $("play").href = play;
+    $("android").hidden = false;
+    // 링크를 누르고 들어온 참이라 바로 한 번 시도한다 (카카오톡 안 브라우저 등은 앱 링크를 건너뛰고 이 페이지를 연다)
+    setTimeout(function () { location.href = intent; }, 400);
+  } else if (ios) {
+    // 앱이 있는데 이 페이지가 열렸다면(카카오톡 안 브라우저 등) "앱에서 열기"가 앱을 연다
+    $("open").href = scheme;
+    $("appstore").href = appStore;
+    $("appstore").onclick = function () { copy(); };
+    $("ios").hidden = false;
+  } else {
+    $("open").hidden = true;
+    $("play2").href = play;
+    $("appstore2").href = appStore;
+    $("desktop").hidden = false;
+  }
+})();
+</script>
+</body>
+</html>

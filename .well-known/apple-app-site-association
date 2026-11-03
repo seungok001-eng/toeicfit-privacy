@@ -1,0 +1,10 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["REPLACE_TEAM_ID.com.omokgenius.app"],
+        "components": [{ "/": "/omok/r/*" }, { "/": "/omok/r" }]
+      }
+    ]
+  }
+}

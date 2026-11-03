@@ -23,6 +23,11 @@ window.YUNLAB_CATALOG = {
       desc: "목표 점수 맞춤 토익 단어 3,600개와 Part 1~7 실전 문제, 모의고사·예상 점수까지. 7개 언어 지원.",
       links: [{ label: "자세히 보기", href: "toeicfit/" }, { label: "개인정보 처리방침", href: "privacy.html" }],
     },
+    {
+      title: "오목 천재", sub: "보드게임 · 앱", icon: "omok/img/apple-touch-icon.png", status: "soon", statusText: "Android 출시 준비 중",
+      desc: "금수를 가르쳐 주는 정식 오목(렌주). 성격이 다른 AI 7명, 매일 수읽기, 급수, 친구·온라인 대국. 5개 언어 지원.",
+      links: [{ label: "자세히 보기", href: "omok/" }, { label: "개인정보 처리방침", href: "omok/privacy.html" }],
+    },
     { placeholder: true, title: "새 학습 앱", desc: "시험 대비·어학 학습 앱을 계속 준비하고 있습니다." },
   ],
   books: [

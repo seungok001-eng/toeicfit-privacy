@@ -7,4 +7,6 @@ YUNLAB(윤랩) 회사 홈페이지와 앱 소개·개인정보 처리방침 (Git
 - 교재 상세: `book.html?id=<교재 id>` — '교재 소개'·'수업자료' 탭. 수업자료 파일은 `materials/<교재 id>/` 에 둔다
 - 토익핏 소개: `toeicfit/`
 - 토익핏 개인정보 처리방침: `privacy.html` — 앱 저장소의 `toeic/scripts/build_privacy.mjs` 로 만든 파일을 복사해 둔다
+- 오목 천재 소개·개인정보·약관·계정 삭제·친구 초대: `omok/` — 원본은 앱 저장소 `yun` 의 `omok/web/` (거기서 고쳐서 복사해 온다, 그 폴더 README 참고)
+- 앱 링크 인증 `.well-known/`(assetlinks.json·apple-app-site-association)과 광고 인증 `app-ads.txt` 는 **맨 위**에 둔다 — 윤랩 앱 전체가 함께 쓰는 파일이라 다른 앱 줄을 지우지 말고 덧붙인다
 - 주소: https://seungok001-eng.github.io/toeicfit-privacy/ → 도메인 https://yunlab.ai.kr (CNAME 파일, DNS 는 Cloudflare)

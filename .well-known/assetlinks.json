@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.omokgenius.app",
+      "sha256_cert_fingerprints": [
+        "AF:F4:78:B8:00:6F:CE:B9:F2:CC:74:24:90:4A:3F:DE:FD:4A:FC:01:DD:7A:9C:C0:A9:06:CB:2A:4A:E0:B2:C7"
+      ]
+    }
+  }
+]
