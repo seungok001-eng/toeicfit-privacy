@@ -19,9 +19,9 @@
 window.YUNLAB_CATALOG = {
   apps: [
     {
-      title: "토익핏", sub: "토익 · 앱", icon: "toeicfit/icon.png", status: "soon", statusText: "Android 출시 준비 중",
+      title: "토익핏", sub: "토익 · 앱", icon: "toeicfit/icon.png", status: "on", statusText: "Google Play 출시",
       desc: "목표 점수 맞춤 토익 단어 3,600개와 Part 1~7 실전 문제, 모의고사·예상 점수까지. 7개 언어 지원.",
-      links: [{ label: "자세히 보기", href: "toeicfit/" }, { label: "개인정보 처리방침", href: "privacy.html" }],
+      links: [{ label: "Google Play", href: "https://play.google.com/store/apps/details?id=com.toeicfit.app" }, { label: "자세히 보기", href: "toeicfit/" }, { label: "이용약관", href: "toeicfit/terms.html" }],
     },
     {
       title: "오목 천재", sub: "보드게임 · 앱", icon: "omok/img/apple-touch-icon.png", status: "soon", statusText: "Android 출시 준비 중",
